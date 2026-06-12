@@ -1,0 +1,40 @@
+.btn {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 100;
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(14,10,11,.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(240,232,232,.12);
+  border-radius: 2px;
+  padding: 9px 16px;
+  cursor: pointer;
+  color: rgba(240,232,232,.5);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  transition: color .25s, border-color .25s;
+}
+.btn:hover { color: rgba(240,232,232,.9); border-color: rgba(240,232,232,.25); }
+
+.bars { display: flex; align-items: flex-end; gap: 2px; height: 12px; }
+.bar {
+  width: 2px; height: 40%;
+  background: currentColor;
+  border-radius: 1px;
+  transition: height .2s;
+}
+.active .bar {
+  animation: eq .7s ease-in-out infinite alternate;
+}
+.active .bar:nth-child(1) { animation-delay: 0s; }
+.active .bar:nth-child(2) { animation-delay: .15s; }
+.active .bar:nth-child(3) { animation-delay: .3s; }
+
+@keyframes eq {
+  from { height: 25%; }
+  to   { height: 100%; }
+}
+
+.label { letter-spacing: .18em; }
